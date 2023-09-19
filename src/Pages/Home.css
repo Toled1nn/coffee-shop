@@ -1,0 +1,24 @@
+.header-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .carrossel-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 75px;
+  }
+  
+.imagem-cafe {
+  width: 100%;
+  position: relative;
+}
+
+.imagem-cafe img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 0.5vw;
+}

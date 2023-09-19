@@ -1,0 +1,63 @@
+.Capitulo {
+    margin: 10px;
+    background-color: #363b44;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .capitulo-container {
+    display: flex;
+    flex-direction: row-reverse; 
+    align-items: center;
+    width: 100%;
+  }
+  
+  .capitulo-imagem {
+    flex: 1;
+  }
+  
+  .imagemcapitulos {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .capitulo-text {
+    flex: 1;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .capitulo-tags {
+    text-align: left;
+  }
+  
+  h1 {
+    font-size: 10px;
+    margin-bottom: 10px;
+    font-family: 'CakeCafe', sans-serif;
+
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-family: 'SanDo sans Semibold', sans-serif;
+}
+  
+  .capitulo-text {
+    display: inline-block;
+    color: #613afd;
+    padding: 10px 20px;
+    font-size: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .capitulo-text:hover {
+    background-color: #555;
+  }
+  

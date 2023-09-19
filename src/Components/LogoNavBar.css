@@ -1,0 +1,81 @@
+:root {
+  --animation-duration: 3s;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fast-spin {
+  animation: App-logo-spin infinite 1s linear;
+}
+
+.logo-container {
+  margin-left: 0;
+  position: fixed;
+  top: -9%; 
+  display: flex;
+  gap: 0;
+  align-items: center;
+  width: 15%; 
+}
+
+.image-container {
+  grid-area: image;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+
+.logo {
+  width: 15vw; 
+  height: auto;
+  animation: App-logo-spin infinite var(--animation-duration) linear;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cafe {
+  width: 10vw; 
+  height: auto;
+  z-index: 1;
+  position: absolute;
+  top: 50%; 
+  left: 51%;
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  color: #61dafb;
+  font-size: 7vw;
+  font-family: 'CakeCafe', sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.text-container {
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  padding-left: 3vw; 
+}
+
+.small-size {
+  transform: scale(0.30);
+}
+
+.normal-size {
+  transform: scale(1);
+}
