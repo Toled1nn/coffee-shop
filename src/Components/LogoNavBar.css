@@ -55,6 +55,7 @@
   color: #61dafb;
   font-size: 7vw;
   font-family: 'CakeCafe', sans-serif;
+  pointer-events: none;
   text-align: center;
   white-space: nowrap;
   margin: 0;

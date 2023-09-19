@@ -6,8 +6,10 @@ import './LogoNavBar.css';
 
 function LogoNavBar({ size = 'normal-size' }) {
 
-  const [logoImage, setLogoImage] = useState(logo);
-  const [textColor, setTextColor] = useState('#61dafb');
+  const [logoAndTextColor, setLogoAndTextColor] = useState({
+    logoImage: logo,
+    textColor: '#61dafb',
+  });
   const [isMouseInside, setIsMouseInside] = useState(false);
   const [animationDuration, setAnimationDuration] = useState(3000); 
   const handleMouseEnter = () => {
@@ -30,14 +32,17 @@ function LogoNavBar({ size = 'normal-size' }) {
     try {
       switch (color) {
         case 'blue':
-          setLogoImage(logo);
-          setTextColor('#61dafb');
+          setLogoAndTextColor({
+            logoImage: logo,
+            textColor: '#61dafb',
+          });
           break;
 
         case 'yellow':
-          setLogoImage(logo2);
-          setTextColor('yellow');
-          break;
+          setLogoAndTextColor({
+            logoImage: logo2,
+            textColor: 'yellow',
+          });
 
         default:
           console.log('Cor não suportada.');
@@ -53,7 +58,7 @@ function LogoNavBar({ size = 'normal-size' }) {
 
       <div className="image-container " >
         
-        <img src={logoImage} alt="Logo" className={`logo ${isMouseInside ? 'fast-spin' : ''}`} style={{ animationDuration: `${animationDuration}ms` }}/>
+        <img src={logoAndTextColor.logoImage} alt="Logo" className={`logo ${isMouseInside ? 'fast-spin' : ''}`} style={{ animationDuration: `${animationDuration}ms` }}/>
 
         <img src={cafe} alt="Cafe" className="cafe" />
 
@@ -61,7 +66,7 @@ function LogoNavBar({ size = 'normal-size' }) {
 
       <div className="text-container">
 
-        <span className="text" style={{ color: textColor }}>
+        <span className="text" style={{ color: logoAndTextColor.textColor }}>
           Coffee-Shop Tia Rosa
         </span>
 
