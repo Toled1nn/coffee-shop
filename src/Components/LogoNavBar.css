@@ -1,5 +1,5 @@
 :root {
-  --animation-duration: 3s;
+  --animation-duration: 2s;
 }
 
 @keyframes App-logo-spin {
@@ -10,7 +10,6 @@
     transform: rotate(360deg);
   }
 }
-
 
 .logo-container {
   margin-left: 0;
@@ -37,6 +36,14 @@
   z-index: 1;
   pointer-events: none;
   user-select: none; 
+}
+
+.logo-container:hover .logo {
+  filter: drop-shadow(0px 4px 8px yellow); /
+}
+
+.logo-container:hover .logo-text {
+  filter: drop-shadow(0px 4px 8px yellow);
 }
 
 .cafe {

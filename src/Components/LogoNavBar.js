@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import cafe from '../Images/cafe.png';
 import logo from '../Images/logo.svg';
 import logo2 from '../Images/logo2.svg';
@@ -11,13 +11,9 @@ function LogoNavBar({ size = 'normal-size' }) {
   });
   const [isMouseInside, setIsMouseInside] = useState(false);
   const [animationDuration, setAnimationDuration] = useState(3000);
-  const accelerateTimeoutRef = useRef(null);
-  const decelerateTimeoutRef = useRef(null);
-  let currentSpeed = animationDuration;
-  const maxSpeed = 200;
+
+  const maxSpeed = 500;
   const minSpeed = 3000;
-  const step = 2;
-  const tempo = 1;
 
   const handleMouseEnter = () => {
     if (!isMouseInside) {
@@ -44,20 +40,7 @@ function LogoNavBar({ size = 'normal-size' }) {
             logoImage: logo,
             textColor: '#61dafb',
           });
-          
-          const decelerate = () => {
-            clearTimeout(accelerateTimeoutRef.current);
-            if (currentSpeed < minSpeed) {
-              currentSpeed += step;
-              if (currentSpeed > minSpeed) {
-                currentSpeed = minSpeed;
-              }
-              setAnimationDuration(currentSpeed);
-              decelerateTimeoutRef.current = setTimeout(decelerate, tempo);
-            }
-          };
-      
-          decelerate();          
+          setAnimationDuration(minSpeed);
           break;
   
         case 'yellow':
@@ -65,19 +48,7 @@ function LogoNavBar({ size = 'normal-size' }) {
             logoImage: logo2,
             textColor: 'yellow',
           });        
-          const accelerate = () => {
-            clearTimeout(decelerateTimeoutRef.current);
-            if (currentSpeed > maxSpeed) {
-              currentSpeed -= step;
-              if (currentSpeed < maxSpeed) {
-                currentSpeed = maxSpeed;
-              }
-              setAnimationDuration(currentSpeed);
-              accelerateTimeoutRef.current = setTimeout(accelerate, tempo);
-            }
-          };
-            
-          accelerate();
+          setAnimationDuration(maxSpeed); 
           break;
   
         default:
