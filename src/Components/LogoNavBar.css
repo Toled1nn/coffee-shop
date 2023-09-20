@@ -3,17 +3,14 @@
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  0% {
+    transform: rotate();
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
 
-.fast-spin {
-  animation: App-logo-spin infinite 1s linear;
-}
 
 .logo-container {
   margin-left: 0;
@@ -34,24 +31,27 @@
 }
 
 .logo {
-  width: 15vw; 
+  width: 15vw;
   height: auto;
   animation: App-logo-spin infinite var(--animation-duration) linear;
   z-index: 1;
   pointer-events: none;
+  user-select: none; 
 }
 
 .cafe {
-  width: 10vw; 
+  width: 10vw;
   height: auto;
   z-index: 1;
   position: absolute;
-  top: 50%; 
+  top: 50%;
   left: 51%;
   transform: translate(-50%, -50%);
+  user-select: none; 
 }
 
-.text {
+
+.logo-text {
   color: #61dafb;
   font-size: 7vw;
   font-family: 'CakeCafe', sans-serif;
@@ -59,7 +59,9 @@
   text-align: center;
   white-space: nowrap;
   margin: 0;
+  user-select: none; 
 }
+
 
 .text-container {
   width: auto;
